@@ -1,0 +1,19 @@
+kafka:
+  bootstrap-servers: localhost:9092, localhost:9093
+  zookeeper-server: localhost:2181
+  topic: flink-poc-data
+  group-id: flink-app-group
+
+flink:
+  output:
+    directory: 'D:\\altimetrik\\output'
+
+keyed.field: keyedField
+value.field: sourceMsg
+extraction.expression: <document:Nm>(.*?)</document:Nm>
+
+file:
+  integration:
+    input-dir-path: 'D:\\altimetrik\\input\\xmls'
+    output-dir-path: 'D:\\altimetrik\\output'
+    file-pattern: '*.txt'
